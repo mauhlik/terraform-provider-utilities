@@ -44,5 +44,7 @@ func (p *UtilitiesFunctionsProvider) Resources(_ context.Context) []func() resou
 func (p *UtilitiesFunctionsProvider) Functions(ctx context.Context) []func() function.Function {
 	return []func() function.Function{
 		functions.NewGetEnvironmentVariable,
+		functions.NewGetGithubOwnerVariable,
+		functions.NewGetGithubRepoNameVariable,
 	}
 }
