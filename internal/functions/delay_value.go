@@ -44,11 +44,11 @@ func (d DelayValue) Definition(ctx context.Context, req function.DefinitionReque
 func (d DelayValue) Run(ctx context.Context, req function.RunRequest, resp *function.RunResponse) {
 	var delayStr, value string
 
-	if err := req.Arguments.Get(ctx, &delayStr); err != nil {
+	if err := req.Arguments.GetArgument(ctx, 0, &delayStr); err != nil {
 		resp.Error = err
 		return
 	}
-	if err := req.Arguments.Get(ctx, &value); err != nil {
+	if err := req.Arguments.GetArgument(ctx, 1, &value); err != nil {
 		resp.Error = err
 		return
 	}
