@@ -47,5 +47,6 @@ func (p *UtilitiesFunctionsProvider) Functions(ctx context.Context) []func() fun
 		functions.NewGetGithubOwnerVariable,
 		functions.NewGetGithubRepoNameVariable,
 		functions.NewDelayValue,
+		functions.NewMergeManifests,
 	}
 }
