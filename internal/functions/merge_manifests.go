@@ -24,13 +24,11 @@ func MergeManifests(_ context.Context, manifests1, manifests2 []map[string]inter
 		return fmt.Sprintf("%s|%s|%s", apiVersion, kind, name)
 	}
 
-	// Add all from manifests1
 	for i, m := range manifests1 {
 		merged = append(merged, m)
 		index[manifestKey(m)] = i
 	}
 
-	// Merge or append from manifests2
 	for _, m2 := range manifests2 {
 		key := manifestKey(m2)
 		if i, found := index[key]; found {
