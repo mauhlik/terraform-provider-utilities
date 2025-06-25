@@ -25,6 +25,7 @@ locals {
     }
   ]
   merged = provider::utilities::merge_manifests(local.manifests1, local.manifests2)
+  
 }
 
 output "merged" {
