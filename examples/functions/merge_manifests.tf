@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     utilities = {
-      source = "mauhlik/utilities"
+      source  = "mauhlik/utilities"
       version = ">= 0.1.0"
     }
   }
