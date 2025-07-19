@@ -45,6 +45,9 @@ func MergeManifests(_ context.Context, manifests1, manifests2 []map[string]inter
 // - For other values: src overwrites dst.
 func DeepMerge(dst, src map[string]interface{}) map[string]interface{} {
 	for k, v := range src {
+		if v == nil {
+			continue
+		}
 		if vMap, ok := v.(map[string]interface{}); ok {
 			if dstMap, found := dst[k].(map[string]interface{}); found {
 				dst[k] = DeepMerge(dstMap, vMap)
